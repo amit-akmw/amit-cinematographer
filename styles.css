@@ -7,3 +7,18 @@
 .video-surface.native video{display:block;width:100%;height:100%;object-fit:contain;background:#050709}.video-surface.native{height:auto}
 
 .work-group{margin:44px 0 24px}.grid{align-items:start}
+
+/* Align project rows while preserving every film's aspect ratio. */
+#work .grid{gap:28px;align-items:stretch}
+.video-card{display:flex;flex-direction:column;height:100%}
+.video-card[hidden]{display:none}
+.video-card .video-surface{flex-shrink:0;position:relative;width:100%;height:auto;aspect-ratio:16/9;max-width:none;margin:0}
+.video-card .video-surface iframe,.video-card .video-surface video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.video-copy{flex:1;display:flex;flex-direction:column;padding:24px}
+.video-copy h3{margin:12px 0 16px}
+.video-copy .role{margin-top:auto}
+@media(max-width:760px){
+ #work .grid{gap:24px}
+ .video-card .video-surface.vertical{aspect-ratio:9/16;max-width:360px;align-self:center}
+ .video-copy{padding:22px}
+}
